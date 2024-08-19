@@ -71,4 +71,4 @@ const winnerCheck = () => {
     }
 }
 
-playAgain.addEventListener("click" , resetGame)
+playAgain.addEventListener("click", resetGame)
