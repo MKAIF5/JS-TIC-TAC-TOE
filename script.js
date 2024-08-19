@@ -26,5 +26,14 @@ buttons.forEach((button) => {
             turnO = true
         }
         button.disabled = true;
+
+        winnerCheck()
     });
 });
+
+const winnerCheck = () => {
+    for (let pattern of winPatterns) {
+        console.log(pattern);
+
+    }
+}
