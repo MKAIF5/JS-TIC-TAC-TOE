@@ -1,4 +1,4 @@
-const button = document.getElementById("btn");
+const buttons = document.querySelectorAll("#btn");
 const playAgain = document.getElementById("play-again");
 
 let turnO = true;
@@ -12,4 +12,19 @@ const winPatterns = [
     [2, 4, 6],
     [3, 4, 5],
     [6, 7, 8],
-]
+];
+
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        // console.log("clicked...");
+        if (turnO) {
+            button.innerText = "O"
+            turnO = false
+        }
+        else {
+            button.innerText = "X"
+            turnO = true
+        }
+        button.disabled = true;
+    });
+});
