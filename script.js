@@ -1,5 +1,5 @@
 const buttons = document.querySelectorAll("#btn");
-const playAgain = document.getElementById("play-again");
+const reset = document.getElementById("play-again");
 const answer = document.getElementById("answer");
 
 let turnO = true;
@@ -32,6 +32,12 @@ buttons.forEach((button) => {
     });
 });
 
+const disabledBoxes = () =>{
+    for(let btn of buttons){
+        btn.disabled = true;
+    }
+}
+
 const winnerCheck = () => {
     for (let pattern of winPatterns) {
         let posValue1 = buttons[pattern[0]].innerText
@@ -39,7 +45,8 @@ const winnerCheck = () => {
         let posValue3 = buttons[pattern[2]].innerText
 
         if (posValue1 != "" && posValue2 != "" && posValue3 != "") {
-            if (posValue1 == posValue2 && posValue2 && posValue3) {
+            if (posValue1 === posValue2 && posValue2 === posValue3) {
+                disabledBoxes()
                 Swal.fire({
                   title: posValue1,
                   text: "You Are The Winner...",
