@@ -1,6 +1,7 @@
 const buttons = document.querySelectorAll("#btn");
-const reset = document.getElementById("play-again");
+const playAgain = document.getElementById("play-again");
 const answer = document.getElementById("answer");
+
 
 let turnO = true;
 
@@ -14,6 +15,11 @@ const winPatterns = [
     [3, 4, 5],
     [6, 7, 8],
 ];
+
+const resetGame = () => {
+    let turnO = true;
+    enableBoxes();
+}
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -32,9 +38,17 @@ buttons.forEach((button) => {
     });
 });
 
-const disabledBoxes = () =>{
-    for(let btn of buttons){
+const disabledBoxes = () => {
+    for (let btn of buttons) {
         btn.disabled = true;
+    }
+}
+
+
+const enableBoxes = () => {
+    for (let btn of buttons) {
+        btn.disabled = false;
+        btn.innerText = "";
     }
 }
 
@@ -48,11 +62,13 @@ const winnerCheck = () => {
             if (posValue1 === posValue2 && posValue2 === posValue3) {
                 disabledBoxes()
                 Swal.fire({
-                  title: posValue1,
-                  text: "You Are The Winner...",
-                  icon: "success"
+                    title: posValue1,
+                    text: "You Are The Winner...",
+                    icon: "success"
                 });
             }
         }
     }
 }
+
+playAgain.addEventListener("click" , resetGame)
