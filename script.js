@@ -33,7 +33,8 @@ buttons.forEach((button) => {
 
 const winnerCheck = () => {
     for (let pattern of winPatterns) {
-        console.log(pattern);
+        console.log(pattern[0], pattern[1], pattern[2]);
+        console.log(buttons[pattern[0]], buttons[pattern[1]], buttons[pattern[2]]);
 
     }
 }
