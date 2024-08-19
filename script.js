@@ -1,5 +1,6 @@
 const buttons = document.querySelectorAll("#btn");
 const playAgain = document.getElementById("play-again");
+const answer = document.getElementById("answer");
 
 let turnO = true;
 
@@ -33,8 +34,18 @@ buttons.forEach((button) => {
 
 const winnerCheck = () => {
     for (let pattern of winPatterns) {
-        console.log(pattern[0], pattern[1], pattern[2]);
-        console.log(buttons[pattern[0]], buttons[pattern[1]], buttons[pattern[2]]);
+        let posValue1 = buttons[pattern[0]].innerText
+        let posValue2 = buttons[pattern[1]].innerText
+        let posValue3 = buttons[pattern[2]].innerText
 
+        if (posValue1 != "" && posValue2 != "" && posValue3 != "") {
+            if (posValue1 == posValue2 && posValue2 && posValue3) {
+                Swal.fire({
+                  title: posValue1,
+                  text: "You Are The Winner...",
+                  icon: "success"
+                });
+            }
+        }
     }
 }

@@ -1,4 +1,3 @@
-/* General Styles */
 body {
   margin: 0;
   padding: 0;
@@ -10,24 +9,29 @@ body {
   animation: gradientAnimation 10s ease infinite;
   overflow-x: hidden;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-/* Container */
 .container {
   width: 90%;
   max-width: 1200px;
-  margin: 0 auto;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Header */
 header {
   background-color: #000;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  width: 100%;
 }
 
-/* Header h1 */
 h1 {
   font-size: 2.5em;
   color: #fff;
@@ -35,41 +39,14 @@ h1 {
   animation: fadeIn 2s ease-out;
 }
 
-/* Hero Section */
-.hero {
-  background: rgba(0, 0, 0, 0.7);
-  color: #eee;
-  padding: 40px 20px;
-  border-radius: 10px;
-  margin: 20px 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  box-sizing: border-box; /* Include padding in width */
-}
-
-/* Hero h2 */
-.hero h2 {
-  font-size: 2em;
-  margin: 0;
-  animation: slideIn 1.5s ease-out;
-}
-
-/* Hero p */
-.hero p {
-  font-size: 1.2em;
-  margin: 10px 0 0;
-}
-
-/* Tic-Tac-Toe Section */
 .tic-tac-toe {
   background-color: rgba(51, 51, 51, 0.8);
   border-radius: 10px;
-  padding: 20px;
-  margin: 20px 0;
+  padding: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
-  box-sizing: border-box; /* Include padding in width */
+  box-sizing: border-box;
 }
 
-/* Tic-Tac-Toe h2 */
 .tic-tac-toe h2 {
   color: #eee;
   margin: 0 0 20px;
@@ -77,24 +54,20 @@ h1 {
   animation: slideIn 1.5s ease-out;
 }
 
-/* Grid */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 10px;
-  justify-content: center;
-  max-width: 360px;
+  max-width: 370px;
   margin: 0 auto;
-  box-sizing: border-box; /* Include padding in width */
 }
 
-/* Cells */
 .cell {
-  width: 100%;
-  height: 100px;
+  width: 7rem;
+  height: 7rem;
   background-color: #444;
-  border-radius: 5px;
+  border-radius: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,7 +75,6 @@ h1 {
   color: #eee;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
-  border-radius: 1rem;
   border: none;
 }
 
@@ -111,7 +83,6 @@ h1 {
   transform: scale(1.1);
 }
 
-/* Play Again Button */
 .play-again {
   background-color: #444;
   color: #eee;
@@ -133,25 +104,7 @@ h1 {
   margin-right: 10px;
 }
 
-/* Footer */
-footer {
-  background-color: rgba(34, 34, 34, 0.8);
-  padding: 10px;
-  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  box-sizing: border-box; /* Include padding in width */
-}
 
-footer p {
-  margin: 0;
-  color: #ccc;
-  font-size: 1em;
-  animation: fadeIn 2s ease-out;
-}
-
-/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -184,7 +137,6 @@ footer p {
   }
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .hero h2 {
     font-size: 1.5em;
@@ -218,8 +170,6 @@ footer p {
   }
 
   .grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
     gap: 5px;
   }
 
