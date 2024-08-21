@@ -2,7 +2,6 @@ const buttons = document.querySelectorAll("#btn");
 const playAgain = document.getElementById("play-again");
 const answer = document.getElementById("answer");
 
-
 let turnO = true;
 
 const winPatterns = [
@@ -43,7 +42,6 @@ const disabledBoxes = () => {
         btn.disabled = true;
     }
 }
-
 
 const enableBoxes = () => {
     for (let btn of buttons) {
